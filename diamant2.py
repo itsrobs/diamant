@@ -9,13 +9,14 @@ def firkant(antall):
             t.forward(xLengde)
             t.right(vinkel)
 
-
+    
     lengde = 40
     xLengde = lengde*antall
     vinkel = 90
     sider = 4
     diagonal = sqrt((lengde**2)+(lengde**2))
     t.speed(20)
+    t.Screen().bgcolor("black")
 
     t.left(45)
     for mengde in range(antall):
