@@ -19,8 +19,9 @@ def firkant(antall=5, colorS="n", lengde=20, vinkel=90, sider=4):
     
     t.Screen().bgcolor("brown")
     t.speed(0)
-
+    t.penup()
     t.setx(-((diagonal/2)*antall))
+    t.pendown()
 
     t.left(45)
     for mengde in range(antall):
@@ -61,7 +62,11 @@ def main():
     antall_firkanter = tall_input("Hvor mange diamanter?: ")
     lengde = tall_input("Størrelse: ")
     fargevalg = input("Crazy farge modus? (y/N): ")
-    firkant(antall_firkanter,colorS=fargevalg, lengde=lengde)
+    random_shape_mode = input("Random mønster modus? (y/N): ")
+    if random_shape_mode == "y":
+        firkant(antall_firkanter,colorS=fargevalg, lengde=lengde, vinkel=randint(3, 300), sider=randint(3, 20))
+    else:    
+        firkant(antall_firkanter,colorS=fargevalg, lengde=lengde)
 
 
 if __name__=="__main__":
