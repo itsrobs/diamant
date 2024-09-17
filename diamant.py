@@ -13,7 +13,6 @@ def firkant(antall=5, colorS="n", lengde=20, vinkel=90, sider=4):
     xLengde = lengde*antall
     diagonal = sqrt((lengde**2)+(lengde**2))
     counter = antall
-    counter2 = 0
     
     color1 = "black"
     color2 = "white"
@@ -44,7 +43,6 @@ def firkant(antall=5, colorS="n", lengde=20, vinkel=90, sider=4):
         t.left(45)
         xLengde -= lengde
         counter -= 1
-        counter2 += 1
         t.pendown()
     t.done()
 
