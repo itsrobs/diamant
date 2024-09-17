@@ -44,7 +44,7 @@ def firkant(antall=5, colorS="n", lengde=20, vinkel=90, sider=4):
         xLengde -= lengde
         counter -= 1
         t.pendown()
-    t.done()
+    t.exitonclick()
 
 
 def main():
