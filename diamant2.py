@@ -1,6 +1,6 @@
 import turtle as t
 from math import sqrt
-import random
+from random import randint
 
 def firkant(antall):
 
@@ -10,28 +10,36 @@ def firkant(antall):
             t.right(vinkel)
 
     
-    lengde = 20
+    lengde = 10
     xLengde = lengde*antall
     vinkel = 90
     sider = 4
     diagonal = sqrt((lengde**2)+(lengde**2))
     counter = 1
-    t.speed(10)
+    t.speed(100)
     t.Screen().bgcolor("black")
-    colorS = "r"
-
+    
+    color1 = "black"
+    color2 = "white"
+    
+    colorS = "r "
+    
+    t.right(180)
+    t.penup()
+    t.forward((diagonal/2)*antall)
+    t.right(180)
+    t.pendown()
     t.left(45)
     for mengde in range(antall):
         if colorS == "r":
             t.colormode(255)
-            t.fillcolor(random.randint(1,255), random.randint(1,255), random.randint(1,255))
+            t.fillcolor(randint(1,255), randint(1,255), randint(1,255))
         else:
-            if counter % 2 != 0:
-                t.colormode(1)
-                t. fillcolor("black")
+            t.colormode(1)
+            if counter % 2 == 0:
+                t. fillcolor(color1)
             else:
-                t.colormode(1)
-                t.fillcolor("white")
+                t.fillcolor(color2)
         t.begin_fill()
         tegn(sider)
         t.end_fill()
@@ -48,4 +56,4 @@ def firkant(antall):
 
 
 if __name__=="__main__":
-    firkant(10)
+    firkant(40)
